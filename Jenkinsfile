@@ -40,7 +40,7 @@ node{
         } 
     }    
 	stage('Ansible Playbook Execution'){
-			sh "export ANSIBLE_HOST_KEY_CHECKING=False && ansible-playbook -i inventory.yaml containerDeploy.yaml -e httpPort=$httpPort -e containerName=$containerName -e dockerImageTag=$dockerHubUser/$containerName:$tag -e key_pair_path=/var/lib/jenkins/server.pem --become" 
+			sh "export ANSIBLE_HOST_KEY_CHECKING=False && ansible-playbook -i inventory.yaml containerDeploy.yaml -e httpPort=$httpPort -e containerName=$containerName -e dockerImageTag=$dockerHubUser/$containerName:$tag -e key_pair_path=/var/lib/jenkins/appserver.pem --become" 
 	}
 }
 
